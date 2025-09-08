@@ -1,0 +1,22 @@
+pwd - it give the current folder location or say current working directory 
+cd - change directory - helps to move to any directory 
+cd .. to go back (not to mention the space in between cd and ..)
+
+ls - for listing all the files in the folder 
+ cd ../.. takes us to the root directory 
+
+mkdir - it makes a new folder with desired name at desired location 
+
+touch  - it makes a nenw file 
+
+cat - it prints the content of the file 
+
+vi - (not beginner friendly , it always us to change and update files from the terminal itself)
+
+mv - it moves the file or folder  from one place to other(using terminal only )
+
+cp - it will copy a folder or file to another place 
+
+node - very important will be used to run the js files in the terminal
+
+npm - (node package managerfff)
