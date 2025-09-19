@@ -1,0 +1,81 @@
+## so we are going to make the codes that are used in the git to use github ##
+we try to keep it cool and simple.
+
+// what is git 
+
+~ Version Control System (VCS): Keeps track of file changes over time, so you can go back, branch off, or merge.
+
+## What makes Git different (the sharp edge) ##
+
+1) Snapshots, not diffs:
+                       Older systems (CVS, SVN) store changes line by line (deltas).
+                       Git stores a full snapshot of all files (via trees + blobs).
+                        If a file doesn’t change, Git just points to the same object as before → fast + efficient.
+
+2) Content-addressable storage:
+                              Everything (file, tree, commit) is stored by its hash (SHA-1 / SHA-256).
+                              This makes Git inherently tamper-proof — change one byte, the hash changes, Git notices instantly.
+3)   Local-first:
+                 You don’t need a server to commit, branch, or view history.
+                 Server (like GitHub/GitLab) is just for sharing — Git works without it.
+4)  Branching & merging are cheap:
+                Branch = just a pointer to a commit hash. Lightweight.
+                You can create and merge branches like breathing.
+
+----------------------------------- Git commands --------------------------------------------------
+```` this are the most used and begginer friendly git commands``````````
+git init
+git clone
+git status
+git add
+git commit -m
+git log --oneline
+git branch
+git checkout -b
+git push
+git pull
+
+
+----------------- thier functionality --------------------------------------
+
+** Starting a repo *******************************************
+
+git init → “Make this folder a Git repo.”
+git clone <url> → “Copy someone else’s repo to my machine.”
+
+** Everyday cycle ********************************************
+
+git status →          “What’s changed? What’s staged?”
+git add <file> →      “I want Git to track this change.”
+git add . →           “Stage everything in the folder.”
+git commit -m "msg" → “Save the snapshot with a label (message).”
+git log --oneline →   “Show me history in short form.”
+
+** Branching ***************************************************
+
+git branch → “List the branches.”
+git branch <name> → “Create a new branch (pointer).”
+git checkout <branch> → “Switch to that branch.”
+git checkout -b <name> → “Make a new branch and jump into it.”
+git merge <branch> → “Pull the changes from that branch into mine.”
+
+** Remote work (GitHub/GitLab/etc.) ******************************
+
+git remote -v → “Where’s my cloud repo?”
+git push origin <branch> → “Upload my branch to the cloud.”
+git pull origin <branch> → “Download + merge changes from cloud.”
+git fetch → “Check what’s new in the cloud, but don’t touch my files yet.”
+
+** Undoing mistakes *********************************************** 
+
+git reset <file> → “Unstage this file.”
+git checkout -- <file> → “Throw away local changes to this file (danger).”
+git revert <commit> → “Undo this commit safely by making a new commit.”
+git reset --hard <commit> → “Time travel: set repo to this commit, delete all other changes (nuclear).”
+
+** Extras (life savers) ********************************************
+
+git stash → “Hide my messy changes for later.”
+git stash pop → “Bring back the hidden changes.”
+git show <commit> → “Show me what happened in that commit.”
+    
